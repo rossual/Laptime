@@ -8,10 +8,16 @@ namespace Laptime
 {
     public class Lap
     {
+        private TimeSpan _lapTime;
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int LapNumber { get; set; }
         public int RiderNumber { get; set; }
+        public TimeSpan LapTime { get => _lapTime; }
+        public void CalculateLaptime()
+        {
+            _lapTime = EndTime - StartTime;
+        }
 
     }
 }
